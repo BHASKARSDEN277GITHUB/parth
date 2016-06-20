@@ -52,6 +52,7 @@ public class CommandTypeDao {
             e.printStackTrace();
         }finally {
             cursor.close();
+            sqLiteDatabase.close();
         }
 
 
@@ -81,6 +82,7 @@ public class CommandTypeDao {
             e.printStackTrace();
         }finally {
             cursor.close();
+            sqLiteDatabase.close();
         }
 
 
@@ -96,6 +98,8 @@ public class CommandTypeDao {
         values.put(dbManager.TYPE, dto.getType());
 
         sqLiteDatabase.insert(dbManager.TABLE_COMMANDTYPE, null, values);
+
+        sqLiteDatabase.close();
     }
 
     //method to remove record from actionspeech table
@@ -104,5 +108,7 @@ public class CommandTypeDao {
         String whereClause = dbManager.KEYWORDCT + " = ?";
         String[] whereArgs = { keyword };
         sqLiteDatabase.delete(dbManager.TABLE_COMMANDTYPE, whereClause, whereArgs);
+
+        sqLiteDatabase.close();
     }
 }

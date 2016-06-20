@@ -87,11 +87,10 @@ public class TeachMeActivity extends Activity implements View.OnClickListener {
 
         }catch (Exception e){
             e.printStackTrace();
+            //Toast.makeText(getApplicationContext(),"Unable to locate command in db. Please note commands are even space sensitive.",Toast.LENGTH_LONG).show();
         }finally {
-            Toast.makeText(getApplicationContext(),"Unable to locate command in db. Please note commands are even space sensitive.",Toast.LENGTH_LONG).show();
+
         }
-
-
         removecommand.setText("");
     }
 }

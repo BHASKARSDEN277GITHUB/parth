@@ -95,6 +95,8 @@ public class DatabaseManager extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(createInsertQueryAS("how are you", "i am fine. thanks for asking."));
 
         Log.d(TAG,"database manager on create executed successfully");
+
+        //sqLiteDatabase.close();
     }
 
     @Override

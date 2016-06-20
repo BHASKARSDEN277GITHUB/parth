@@ -49,6 +49,7 @@ public class ActionSpeechDao {
             e.printStackTrace();
         }finally {
             cursor.close();
+            sqLiteDatabase.close();
         }
 
         return list;
@@ -63,6 +64,8 @@ public class ActionSpeechDao {
         values.put(dbManager.TEXT, dto.getText());
 
         sqLiteDatabase.insert(dbManager.TABLE_ACTIONSPEECH, null, values);
+
+        sqLiteDatabase.close();
     }
 
     //method to remove record from actionspeech table
@@ -71,5 +74,7 @@ public class ActionSpeechDao {
         String whereClause = dbManager.KEYWORDAS + " = ?";
         String[] whereArgs = { keyword };
         sqLiteDatabase.delete(dbManager.TABLE_ACTIONSPEECH, whereClause, whereArgs);
+
+        sqLiteDatabase.close();
     }
 }
