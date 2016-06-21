@@ -36,8 +36,8 @@ public class CommandTypeDao {
 
         SQLiteDatabase sqLiteDatabase = dbManager.getWritableDatabase();
         Log.d(TAG,"Version Database: "+sqLiteDatabase.getVersion());
-        //write query for getting speech based upon keyword
 
+        //write query for getting speech based upon keyword
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT keyword, type FROM "+dbManager.TABLE_COMMANDTYPE+" WHERE keyword = ?", new String[]{ keyword });
 
         try {
@@ -66,8 +66,8 @@ public class CommandTypeDao {
 
         SQLiteDatabase sqLiteDatabase = dbManager.getWritableDatabase();
         Log.d(TAG,"Version Database: "+sqLiteDatabase.getVersion());
-        //write query for getting speech based upon keyword
 
+        //write query for getting speech based upon keyword
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT keyword, type FROM "+dbManager.TABLE_COMMANDTYPE,null);
 
         try {

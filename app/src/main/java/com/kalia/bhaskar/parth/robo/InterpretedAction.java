@@ -10,6 +10,7 @@ import com.kalia.bhaskar.parth.services.InterpreterService;
 * this class represent on object having properties keyword and type
 * this act as feed to responder service
 * */
+
 public class InterpretedAction {
     private String keyword;
     private String type; // create enum for 'types' in future

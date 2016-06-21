@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.kalia.bhaskar.parth.R;
 import com.kalia.bhaskar.parth.dto.CommandTypeDto;
+import com.kalia.bhaskar.parth.interfaces.DataServiceInterface;
 import com.kalia.bhaskar.parth.robo.Robo;
 import com.kalia.bhaskar.parth.services.DataService;
 
@@ -23,7 +24,7 @@ import java.util.List;
  * Created by bhaskar on 18/6/16.
  */
 public class TeachMeActivity extends Activity implements View.OnClickListener {
-    private DataService dataService;
+    private DataServiceInterface dataService;
     private EditText keyword;
     private EditText text;
     private EditText removecommand;
@@ -87,7 +88,7 @@ public class TeachMeActivity extends Activity implements View.OnClickListener {
 
         }catch (Exception e){
             e.printStackTrace();
-            //Toast.makeText(getApplicationContext(),"Unable to locate command in db. Please note commands are even space sensitive.",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Unable to locate command in db. Please note commands are even space sensitive.",Toast.LENGTH_LONG).show();
         }finally {
 
         }

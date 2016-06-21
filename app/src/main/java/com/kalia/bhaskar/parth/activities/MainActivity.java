@@ -1,23 +1,17 @@
 package com.kalia.bhaskar.parth.activities;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
-import android.text.method.ScrollingMovementMethod;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kalia.bhaskar.parth.R;
-import com.kalia.bhaskar.parth.dto.CommandTypeDto;
-import com.kalia.bhaskar.parth.robo.Mappings;
+import com.kalia.bhaskar.parth.interfaces.DataServiceInterface;
 import com.kalia.bhaskar.parth.robo.Robo;
 import com.kalia.bhaskar.parth.services.DataService;
 
@@ -26,7 +20,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
     private final int REQUEST_OK = 1;
     private Robo robo ; //robo remote
-    private DataService dataService;
+    private DataServiceInterface dataService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

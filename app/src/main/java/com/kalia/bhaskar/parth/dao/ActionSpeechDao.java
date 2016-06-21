@@ -63,9 +63,19 @@ public class ActionSpeechDao {
         values.put(dbManager.KEYWORDAS,dto.getKeyword());
         values.put(dbManager.TEXT, dto.getText());
 
-        sqLiteDatabase.insert(dbManager.TABLE_ACTIONSPEECH, null, values);
-
-        sqLiteDatabase.close();
+        try{
+            long count = sqLiteDatabase.insert(dbManager.TABLE_ACTIONSPEECH, null, values);
+            Log.d(TAG,count+"");
+            if(count == -1){
+                values = new ContentValues();
+                values.put(dbManager.TEXT,dto.getText());
+                sqLiteDatabase.update(dbManager.TABLE_ACTIONSPEECH,values, dbManager.KEYWORDAS+"="+"'"+dto.getKeyword()+"'",null);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            sqLiteDatabase.close();
+        }
     }
 
     //method to remove record from actionspeech table

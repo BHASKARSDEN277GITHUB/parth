@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.kalia.bhaskar.parth.R;
 import com.kalia.bhaskar.parth.dto.CommandTypeDto;
+import com.kalia.bhaskar.parth.interfaces.DataServiceInterface;
 import com.kalia.bhaskar.parth.robo.Robo;
 import com.kalia.bhaskar.parth.services.DataService;
 
@@ -21,7 +22,7 @@ import java.util.List;
  * Created by bhaskar on 18/6/16.
  */
 public class CommandsListActivity extends Activity  {
-    private DataService dataService;
+    private DataServiceInterface dataService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -9,6 +9,5 @@ import com.kalia.bhaskar.parth.robo.InterpretedAction;
  * Created by bhaskar on 15/6/16.
  */
 public interface ResponderServiceInterface {
-
     public void respond(InterpretedAction ia, Context context, TextToSpeech textToSpeech);
 }
