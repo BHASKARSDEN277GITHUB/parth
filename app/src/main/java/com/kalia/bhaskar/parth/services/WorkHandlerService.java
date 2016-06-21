@@ -50,8 +50,9 @@ public class WorkHandlerService implements WorkHandlerServiceInterface {
             } else {
                 String keyword = ia.getKeyword();
                 if (keyword.equals("sleep")) {
-
+                    sleep(context);
                 } else if (keyword.equals("show commands")) {
+                    showCommands(context);
 
                 } else if (keyword.startsWith("call")) {
                     Log.d("workhandlerservice: ", keyword);
