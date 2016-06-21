@@ -37,19 +37,33 @@ public class DataService implements DataServiceInterface{
         CommandTypeDao dao1 = new CommandTypeDao(context);
         ActionSpeechDao dao2 = new ActionSpeechDao(context);
 
-        // insert data table1
-        CommandTypeDto dto1 = new CommandTypeDto();
-        dto1.setKeyword(keyword);
-        dto1.setType("speak");
 
-        dao1.insertRow(dto1);
+        //for command type work only entry to be made in commandtype table
+        if(text.equals("*work*")){
+            // insert data table1
+            CommandTypeDto dto1 = new CommandTypeDto();
+            dto1.setKeyword(keyword);
+            dto1.setType("work");
 
-        // insert data to table2
-        ActionSpeechDto dto2 = new ActionSpeechDto();
-        dto2.setKeyword(keyword);
-        dto2.setText(text);
+            dao1.insertRow(dto1);
 
-        dao2.insertRow(dto2);
+        }else{
+            // insert data table1
+            CommandTypeDto dto1 = new CommandTypeDto();
+            dto1.setKeyword(keyword);
+            dto1.setType("speak");
+
+            dao1.insertRow(dto1);
+
+
+
+            // insert data to table2
+            ActionSpeechDto dto2 = new ActionSpeechDto();
+            dto2.setKeyword(keyword);
+            dto2.setText(text);
+
+            dao2.insertRow(dto2);
+        }
     }
 
     @Override

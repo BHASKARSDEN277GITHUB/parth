@@ -68,8 +68,11 @@ public class DatabaseManager extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(createInsertQueryCT("fuck you", "speak"));
         sqLiteDatabase.execSQL(createInsertQueryCT("status", "speak"));
         sqLiteDatabase.execSQL(createInsertQueryCT("how are you", "speak"));
+
+
         sqLiteDatabase.execSQL(createInsertQueryCT("sleep", "work"));
         sqLiteDatabase.execSQL(createInsertQueryCT("show commands", "work"));
+        sqLiteDatabase.execSQL(createInsertQueryCT("call", "work"));
 
 
         //insert predefined data into first table
